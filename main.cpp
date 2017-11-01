@@ -1,12 +1,13 @@
-#include <QApplication>
-#include <QTextCodec>
-#include "mainwindow.h"
+#include <QCoreApplication>
+
+#include <filecleaner.h>
+#include <QRegExp>
 
 int main(int argc, char *argv[]) {
-  QApplication a(argc, argv);
-  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-  MainWindow w;
-  w.show();
-
-  return a.exec();
+  if (argc > 1) {
+    QString file_path = argv[1];
+    FileCleaner::ClearRegExpFromFile(file_path,
+                                     QRegExp("[ \\]*TRACE\\(.+\\);\n"));
+  }
+  return 0;
 }
