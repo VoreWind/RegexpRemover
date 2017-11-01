@@ -7,7 +7,7 @@ class QRegExp;
 class FileCleaner {
  public:
   static void ClearRegExpFromFile(const QString& file_path,
-                                  const QRegExp& regexp);
+                                  const QString& regexp_string);
 };
 
 #endif  // FILECLEANER_H
