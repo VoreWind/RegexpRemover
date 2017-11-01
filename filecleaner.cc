@@ -1,7 +1,5 @@
 #include "filecleaner.h"
 
-#include <unistd.h>
-
 #include <QFile>
 #include <QRegExp>
 #include <QString>
