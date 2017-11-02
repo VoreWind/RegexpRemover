@@ -22,11 +22,11 @@ int main(int argc, char *argv[]) {
   }
 
   if (regexp_string.isEmpty()) {
-    regexp_string = "[\\ ]*TRACE\\(.+\\);\n";
+    regexp_string = "[ ]+TRACE\\(.+\\);\n";
   }
 
   for (auto file_path : file_paths) {
-    FileCleaner::ClearRegExpFromFile(file_path, "[\\ ]*TRACE\\(.+\\);\n");
+    FileCleaner::ClearRegExpFromFile(file_path, regexp_string);
   }
   return 0;
 }
